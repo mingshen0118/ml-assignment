@@ -1,0 +1,12 @@
+gdown
+streamlit
+pandas
+numpy
+skfuzzy
+matplotlib.pyplot
+plotly.express
+mpld3
+streamlit.components.v1
+seaborn
+scikit-learn
+scikit-fuzzy
