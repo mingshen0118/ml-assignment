@@ -2,11 +2,10 @@ gdown
 streamlit
 pandas
 numpy
-skfuzzy
-matplotlib.pyplot
-plotly.express
+matplotlib
+plotly
 mpld3
-streamlit.components.v1
+streamlit-components
 seaborn
 scikit-learn
 scikit-fuzzy
