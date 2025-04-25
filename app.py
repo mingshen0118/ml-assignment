@@ -1,4 +1,3 @@
-import gdown
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -221,10 +220,11 @@ if 'models_scores' not in st.session_state:
 if 'previous_data_option' not in st.session_state:
     st.session_state.previous_data_option = None
 
-data_option = st.radio(
-    "Would you like to use the sample dataset or upload own dataset?",
-    ("Use Sample Data", "Upload Own Data")
-)
+#data_option = st.radio(
+#    "Would you like to use the sample dataset or upload own dataset?",
+#    ("Use Sample Data", "Upload Own Data")
+#)
+data_option = "Upload Own Data"
 
 if st.session_state.previous_data_option is not None and data_option != st.session_state.previous_data_option:
     for i in range(len(st.session_state.models_scores)):
@@ -232,16 +232,16 @@ if st.session_state.previous_data_option is not None and data_option != st.sessi
 st.session_state.previous_data_option = data_option
 
 # Handle dataset selection
-if data_option == "Use Sample Data":
-    df, df_cleaned = data_prepare()
-elif data_option == "Upload Own Data":
-    uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
-    if uploaded_file is not None:
-        df = pd.read_csv(uploaded_file)
-        df_cleaned = data_preprocessing(df)
-    else:
-        st.warning("Please upload a CSV file to proceed.")
-        st.stop()
+#if data_option == "Use Sample Data":
+#    df, df_cleaned = data_prepare()
+#elif data_option == "Upload Own Data":
+uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+    df_cleaned = data_preprocessing(df)
+else:
+    st.warning("Please upload a CSV file to proceed.")
+    st.stop()
 
 # Display Datasets
 st.subheader("📊 Initial Dataset")
