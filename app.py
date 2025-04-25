@@ -1,8 +1,3 @@
-
-!pip install -q streamlit pyngrok
-
-pip install scikit-fuzzy mpld3
- 
 import gdown
 import streamlit as st
 import pandas as pd
