@@ -4,7 +4,6 @@ numpy
 matplotlib
 plotly
 mpld3
-streamlit-components
 seaborn
 scikit-learn
 scikit-fuzzy
